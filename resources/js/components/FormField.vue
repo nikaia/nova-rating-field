@@ -1,0 +1,82 @@
+<template>
+    <default-field :field="field">
+        <template slot="field">
+
+            <star-rating
+                    :id="field.name"
+                    :name="field.name"
+                    :rating="parseFloat(value) || 0"
+                    :increment="increment"
+                    :max-rating="max"
+                    :show-rating="showRating"
+                    @rating-selected="setRating"
+            />
+
+            <p v-if="hasError" class="my-2 text-danger">
+                {{ firstError }}
+            </p>
+        </template>
+    </default-field>
+</template>
+
+<script>
+    import {FormField, HandlesValidationErrors} from 'laravel-nova'
+    import StarRating from 'vue-star-rating'
+
+    export default {
+        mixins: [FormField, HandlesValidationErrors],
+
+        props: ['resourceName', 'resourceId', 'field'],
+
+        components: { StarRating },
+
+        dat: () => ({
+            value: 0,
+        }),
+
+        mounted() {
+            this.value = parseFloat(this.field.value) || 0
+        },
+
+        computed: {
+            increment() {
+                return parseFloat(this.field.increment);
+            },
+            max() {
+                return parseInt(this.field.max);
+            },
+            min() {
+                return parseFloat(this.field.min);
+            },
+            max() {
+                return parseInt(this.field.max);
+            },
+            showRating() {
+                return !!this.field.showRating;
+            }
+        },
+
+
+        methods: {
+
+            setRating(rating) {
+                this.value = parseFloat(rating);
+                console.log(rating, this.value)
+            },
+
+            /**
+             * Fill the given FormData object with the field's internal value.
+             */
+            fill(formData) {
+                formData.append(this.field.attribute, this.value || 0)
+            },
+
+            /**
+             * Update the field's internal value.
+             */
+            handleChange(value) {
+                this.value = value
+            }
+        }
+    }
+</script>

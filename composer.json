@@ -1,0 +1,45 @@
+{
+    "name": "nikaia/nova-rating-field",
+    "description": "Add start rating field to Laravel Nova",
+    "keywords": [
+        "laravel",
+        "nova",
+        "field",
+        "rating"
+    ],
+    "homepage": "https://github.com/nikaia/nova-rating-field",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nassif Bourguig",
+            "email": "nbourguig@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^3.6",
+        "phpunit/phpunit": "7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nikaia\\Rating\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nikaia\\Rating\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nikaia\\Rating\\RatingServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
