@@ -1,6 +1,8 @@
 # Nova Rating field
 
-A **Star rating field** to use in your Laravel Nova apps. [vue-star-rating](https://github.com/craigh411/vue-star-rating) package is used. 
+A **Star rating field** to use in your Laravel Nova apps. 
+
+Uses [vue-star-rating](https://github.com/craigh411/vue-star-rating). 
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/nikaia/nova-rating-field.svg?style=flat-square)](https://packagist.org/packages/nikaia/nova-rating-field)
 [![Total Downloads](https://img.shields.io/packagist/dt/nikaia/nova-rating-field.svg?style=flat-square)](https://packagist.org/packages/nikaia/nova-rating-field)
