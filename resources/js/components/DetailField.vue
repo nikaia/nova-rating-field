@@ -1,36 +1,41 @@
 <template>
-    <default-field :field="field">
-        <template slot="field">
-
+    <panel-item :field="field">
+        <template slot="value">
             <star-rating
+                    :read-only="true"
+
                     :id="field.name"
                     :name="field.name"
                     :rating="parseFloat(value) || 0"
                     :increment="increment"
                     :max-rating="max"
                     :show-rating="showRating"
-                    :read-only="true"
-            />
 
-            <p v-if="hasError" class="my-2 text-danger">
-                {{ firstError }}
-            </p>
+                    :star-size="field['star-size']"
+                    :inactive-color="field['inactive-color']"
+                    :active-color="field['active-color']"
+                    :border-color="field['border-color']"
+                    :border-width="field['border-width']"
+                    :padding="field['padding']"
+                    :rounded-corners="field['rounded-corners']"
+                    :inline="field['inline']"
+                    :glow="field['glow']"
+                    :glow-color="field['glow-color']"
+                    :text-class="field['text-class']"
+            />
         </template>
-    </default-field>
+    </panel-item>
 </template>
 
 <script>
-    import {FormField, HandlesValidationErrors} from 'laravel-nova'
     import StarRating from 'vue-star-rating'
 
     export default {
-        mixins: [FormField, HandlesValidationErrors],
-
-        props: ['resourceName', 'resourceId', 'field'],
+        props: ['resource', 'resourceName', 'resourceId', 'field'],
 
         components: { StarRating },
 
-        dat: () => ({
+        data: () => ({
             value: 0,
         }),
 
@@ -57,26 +62,6 @@
         },
 
 
-        methods: {
-
-            setRating(rating) {
-                this.value = parseFloat(rating);
-                console.log(rating, this.value)
-            },
-
-            /**
-             * Fill the given FormData object with the field's internal value.
-             */
-            fill(formData) {
-                formData.append(this.field.attribute, this.value || 0)
-            },
-
-            /**
-             * Update the field's internal value.
-             */
-            handleChange(value) {
-                this.value = value
-            }
-        }
+        methods: {}
     }
 </script>

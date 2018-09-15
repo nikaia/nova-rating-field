@@ -19,19 +19,33 @@ class Rating extends Field
      *
      * @var array
      */
-    protected $defaultStyles = [
-        'star-size' => 50,
+    protected static $defaultStyles = [
+        'star-size' => 30,
+        'active-color' => 'var(--primary)',
         'inactive-color' => '#d8d8d8',
-        'active-color' => '#ffd055',
-        'border-color' => '#999',
+        'border-color' => 'var(--60)',
         'border-width' => 0,
-        'padding' => 0,
+        'padding' => 10,
         'rounded-corners' => false,
         'inline' => false,
         'glow' => 0,
-        'glow-color' => '#000',
-        'text-class' => '',
+        'glow-color' => '#fff',
+        'text-class' => 'inline-block text-80 h-9 pt-2',
     ];
+
+    /**
+     * Rating constructor.
+     * 
+     * @param string $name
+     * @param null|string $attribute
+     * @param mixed|null $resolveCallback
+     */
+    public function __construct(string $name, ?string $attribute = null, ?mixed $resolveCallback = null)
+    {
+        parent::__construct($name, $attribute, $resolveCallback);
+
+        $this->withStyles(static::$defaultStyles);
+    }
 
     /**
      * Minimum rating.
@@ -99,11 +113,10 @@ class Rating extends Field
     public function withStyles(array $styles)
     {
         $build = [];
-        foreach ($this->defaultStyles as $key => $defaultValue) {
+        foreach (static::$defaultStyles as $key => $defaultValue) {
             $build[$key] = array_get($styles, $key, $defaultValue);
         }
 
         return $this->withMeta($build);
     }
-
 }
