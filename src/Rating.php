@@ -43,6 +43,7 @@ class Rating extends Field
     {
         parent::__construct($name, $attribute, $resolveCallback);
 
+        $this->withMeta(['min' => 0, 'max' => 5]);
         $this->withStyles(static::$defaultStyles);
     }
 
