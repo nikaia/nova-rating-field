@@ -83,7 +83,7 @@ Default values are :
 public function fields(Request $request)
 {
     Rating::make('Rating')
-        ->withStyle([
+        ->withStyles([
             'star-size' => 30,
             'active-color' => 'var(--primary)', // Primary nova theme color.
             'inactive-color' => '#d8d8d8',
