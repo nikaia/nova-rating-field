@@ -9,9 +9,9 @@ Uses [vue-star-rating](https://github.com/craigh411/vue-star-rating).
 
 
 <p align="center">
-    <img src="./docs/players-index.png" style="border: 1px solid #494949">
+    <img src="./docs/players-index.png"/>
     <br/>
-    <img src="./docs/players-form.png" style="border: 1px solid #494949">
+    <img src="./docs/players-edit.png" />
 </p>
 
 
