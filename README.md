@@ -6,8 +6,6 @@ A **Star rating field** to use in your Laravel Nova apps. [vue-star-rating](http
 [![Total Downloads](https://img.shields.io/packagist/dt/nikaia/nova-rating-field.svg?style=flat-square)](https://packagist.org/packages/nikaia/nova-rating-field)
 
 
-![screenshot of the tags field](https://spatie.github.io/nova-tags-field/screenshot.png)
-
 <p align="center">
     <img src="./docs/players-index.png">
 </p>
