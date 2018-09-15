@@ -9,7 +9,7 @@ Uses [vue-star-rating](https://github.com/craigh411/vue-star-rating).
 
 
 <p align="center">
-    <img src="./docs/players-index.png">
+    <img src="./docs/players-index.png" style="boder: 1px solid #494949">
 </p>
 
 
