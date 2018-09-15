@@ -13,7 +13,6 @@ class Rating extends Field
      */
     public $component = 'rating';
 
-
     /**
      * Default component styles.
      *
@@ -35,7 +34,7 @@ class Rating extends Field
 
     /**
      * Rating constructor.
-     * 
+     *
      * @param string $name
      * @param null|string $attribute
      * @param mixed|null $resolveCallback
@@ -49,7 +48,7 @@ class Rating extends Field
 
     /**
      * Minimum rating.
-     * default = 0
+     * default = 0.
      *
      * @param $min
      * @return Rating
