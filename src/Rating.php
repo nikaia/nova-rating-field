@@ -3,6 +3,7 @@
 namespace Nikaia\Rating;
 
 use Laravel\Nova\Fields\Field;
+use Illuminate\Support\Arr;
 
 class Rating extends Field
 {
@@ -114,7 +115,7 @@ class Rating extends Field
     {
         $build = [];
         foreach (static::$defaultStyles as $key => $defaultValue) {
-            $build[$key] = array_get($styles, $key, $defaultValue);
+            $build[$key] = Arr::get($styles, $key, $defaultValue);
         }
 
         return $this->withMeta($build);
