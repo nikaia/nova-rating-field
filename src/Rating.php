@@ -115,7 +115,13 @@ class Rating extends Field
     {
         $build = [];
         foreach (static::$defaultStyles as $key => $defaultValue) {
-            $build[$key] = Arr::get($styles, $key, $defaultValue);
+            // In Laravel 6.5 array_get function not exist 
+            if (function_exists('array_get')) {
+                $build[$key] = array_get($styles, $key, $defaultValue);
+            } else {
+                $build[$key] = Arr::get($styles, $key, $defaultValue);
+            }
+
         }
 
         return $this->withMeta($build);
