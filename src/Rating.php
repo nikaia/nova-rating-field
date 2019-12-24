@@ -2,8 +2,8 @@
 
 namespace Nikaia\Rating;
 
-use Laravel\Nova\Fields\Field;
 use Illuminate\Support\Arr;
+use Laravel\Nova\Fields\Field;
 
 class Rating extends Field
 {
@@ -40,7 +40,7 @@ class Rating extends Field
      * @param null|string $attribute
      * @param mixed|null $resolveCallback
      */
-    public function __construct(string $name, ?string $attribute = null, ?mixed $resolveCallback = null)
+    public function __construct(string $name, $attribute = null, ?mixed $resolveCallback = null)
     {
         parent::__construct($name, $attribute, $resolveCallback);
 
