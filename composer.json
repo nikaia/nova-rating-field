@@ -1,5 +1,5 @@
 {
-    "name": "nikaia/nova-rating-field",
+    "name": "abdukhaligov/nova-rating-field",
     "description": "Add start rating field to Laravel Nova",
     "keywords": [
         "laravel",
