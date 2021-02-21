@@ -40,7 +40,7 @@ class Rating extends Field
      * @param null|string $attribute
      * @param mixed|null $resolveCallback
      */
-    public function __construct(string $name, $attribute = null, ?mixed $resolveCallback = null)
+    public function __construct(string $name, $attribute = null, callable $resolveCallback = null)
     {
         parent::__construct($name, $attribute, $resolveCallback);
 
